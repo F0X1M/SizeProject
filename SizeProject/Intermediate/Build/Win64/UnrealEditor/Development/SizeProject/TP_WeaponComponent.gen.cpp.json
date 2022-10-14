@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\nauka\\unreal\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\sizeproject\\tp_weaponcomponent.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\nauka\\unreal\\sizeproject\\intermediate\\build\\win64\\sizeprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\nauka\\unreal\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\development\\sizeproject\\definitions.sizeproject.h",
+            "d:\\nauka\\unreal\\sizeproject\\source\\sizeproject\\tp_weaponcomponent.h",
+            "d:\\nauka\\unreal\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\sizeproject\\tp_weaponcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

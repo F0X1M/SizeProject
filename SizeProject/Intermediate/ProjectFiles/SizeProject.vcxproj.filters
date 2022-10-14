@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\SizeProject.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SizeProject.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SizeProjectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
+    <Filter Include="Source\SizeProject">
+      <UniqueIdentifier>{B627CA5A-580B-3DF6-A88E-0000AA88AFC8}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SizeProject\SizeProject.Build.cs">
+      <Filter>Source\SizeProject</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\SizeProject\SizeProject.cpp">
+      <Filter>Source\SizeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SizeProject\SizeProject.h">
+      <Filter>Source\SizeProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SizeProject\SizeProjectCharacter.cpp">
+      <Filter>Source\SizeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SizeProject\SizeProjectCharacter.h">
+      <Filter>Source\SizeProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SizeProject\SizeProjectGameMode.cpp">
+      <Filter>Source\SizeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SizeProject\SizeProjectGameMode.h">
+      <Filter>Source\SizeProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SizeProject\SizeProjectProjectile.cpp">
+      <Filter>Source\SizeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SizeProject\SizeProjectProjectile.h">
+      <Filter>Source\SizeProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SizeProject\SpawnBox.cpp">
+      <Filter>Source\SizeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SizeProject\SpawnBox.h">
+      <Filter>Source\SizeProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SizeProject\TP_PickUpComponent.cpp">
+      <Filter>Source\SizeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SizeProject\TP_PickUpComponent.h">
+      <Filter>Source\SizeProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SizeProject\TP_WeaponComponent.cpp">
+      <Filter>Source\SizeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SizeProject\TP_WeaponComponent.h">
+      <Filter>Source\SizeProject</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

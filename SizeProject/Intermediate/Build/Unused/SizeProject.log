@@ -1,0 +1,8 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\foxim\AppData\Local\UnrealBuildTool\Log.txt
+  Invalidating makefile for SizeProjectEditor (working set of source files changed)
+  Parsing headers for SizeProjectEditor
+    Running UnrealHeaderTool "D:\Nauka\Unreal\SizeProject\SizeProject.uproject" "D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\SizeProjectEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\foxim\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+D:/Nauka/Unreal/SizeProject/Source/SizeProject/SpawnBox.h(34): error : Unknown variable specifier 'EditDeafultsOnly'
+D:/Nauka/Unreal/SizeProject/Source/SizeProject/SpawnBox.h(36): error : Missing '>' in 'class limitor'
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(44,5): error MSB3073: Polecenie „"D:\Program Files\Epic Games\UE_5.0\Engine\Build\BatchFiles\Build.bat" SizeProjectEditor Win64 Development -Project="D:\Nauka\Unreal\SizeProject\SizeProject.uproject" -WaitMutex -FromMsBuild” zostało zakończone przez kod 6.

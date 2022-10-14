@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "SizeProject",
+			"Path": "D:\\Nauka\\Unreal\\SizeProject\\Source\\SizeProject.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "SizeProjectEditor",
+			"Path": "D:\\Nauka\\Unreal\\SizeProject\\Source\\SizeProjectEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
