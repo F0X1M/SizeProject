@@ -27,9 +27,9 @@ public:
 
 	UFUNCTION(BlueprintCallable) void EnableActorSpawning(bool Enable);
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) float AvgSpawnTime = 0.1f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float AvgSpawnTime = 0.5f;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) float RandomSpawnTime = 1.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) float RandomSpawnTime = 0.f;
 
 
 private:

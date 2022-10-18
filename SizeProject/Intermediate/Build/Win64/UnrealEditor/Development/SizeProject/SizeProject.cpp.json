@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\nauka\\unreal\\sizeproject\\source\\sizeproject\\sizeproject.cpp",
+        "Source": "d:\\nauka\\unreal\\git\\project\\sizeproject\\source\\sizeproject\\sizeproject.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\nauka\\unreal\\sizeproject\\intermediate\\build\\win64\\sizeprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "PCH": "d:\\nauka\\unreal\\git\\project\\sizeproject\\intermediate\\build\\win64\\sizeprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
         "Includes": [
-            "d:\\nauka\\unreal\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\development\\sizeproject\\definitions.sizeproject.h",
-            "d:\\nauka\\unreal\\sizeproject\\source\\sizeproject\\sizeproject.h"
+            "d:\\nauka\\unreal\\git\\project\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\development\\sizeproject\\definitions.sizeproject.h",
+            "d:\\nauka\\unreal\\git\\project\\sizeproject\\source\\sizeproject\\sizeproject.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

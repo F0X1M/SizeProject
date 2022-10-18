@@ -1,4 +1,4 @@
-D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject\SizeProjectProjectile.gen.cpp
+D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject\SizeProjectProjectile.gen.cpp
 /I .
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine
 /I Runtime
@@ -251,8 +251,8 @@ D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProjec
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
-/I D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject
-/I D:\Nauka\Unreal\SizeProject\Source
+/I D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject
+/I D:\Nauka\Unreal\Git\Project\SizeProject\Source
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\MRMesh
@@ -277,12 +277,12 @@ D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProjec
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\Definitions.SizeProject.h"
-/Yu"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectProjectile.gen.cpp.obj"
-/sourceDependencies D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectProjectile.gen.cpp.json
+/FI"D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/FI"D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\Definitions.SizeProject.h"
+/Yu"D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+/Fo"D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectProjectile.gen.cpp.obj"
+/sourceDependencies D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectProjectile.gen.cpp.json
 /Zc:inline
 /nologo
 /Oi

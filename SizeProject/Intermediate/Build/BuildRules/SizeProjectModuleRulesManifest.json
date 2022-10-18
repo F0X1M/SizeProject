@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\Nauka\\Unreal\\SizeProject\\Source\\SizeProject\\SizeProject.Build.cs",
-		"D:\\Nauka\\Unreal\\SizeProject\\Source\\SizeProject.Target.cs",
-		"D:\\Nauka\\Unreal\\SizeProject\\Source\\SizeProjectEditor.Target.cs"
+		"D:\\Nauka\\Unreal\\Git\\Project\\SizeProject\\Source\\SizeProject\\SizeProject.Build.cs",
+		"D:\\Nauka\\Unreal\\Git\\Project\\SizeProject\\Source\\SizeProject.Target.cs",
+		"D:\\Nauka\\Unreal\\Git\\Project\\SizeProject\\Source\\SizeProjectEditor.Target.cs"
 	],
 	"EngineVersion": "5.0.3"
 }

@@ -118,7 +118,7 @@ public:
 private:
 	UPhysicsHandleComponent* GetPhysicsHandle() const;
 
-	UPROPERTY(EditAnywhere) float Offset = 1;
+	UPROPERTY(EditAnywhere) float Offset = 10;
 	
 	float OriginalDistance;             
 	float OriginalScale;                

@@ -73,8 +73,6 @@ void ASpawnBox::EnableActorSpawning(bool Enable)
 
 void ASpawnBox::SpawnActorScheduled()
 {
-
-
 	if (SpawnActor())
 	{
 		if (ShouldSpawn)
@@ -82,9 +80,4 @@ void ASpawnBox::SpawnActorScheduled()
 			ScheduleActorSpawn();
 		}
 	}
-	else
-	{
-
-	}
-
 }
