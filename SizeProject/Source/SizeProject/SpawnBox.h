@@ -20,29 +20,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
-
 public:
-	UFUNCTION(BlueprintCallable) bool SpawnActor();
+	UFUNCTION(BlueprintCallable) void SpawnActor();
 
-	UFUNCTION(BlueprintCallable) void EnableActorSpawning(bool Enable);
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) float AvgSpawnTime = 0.5f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) float RandomSpawnTime = 0.f;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) TMap<TSubclassOf<AActor>, int32> ObjectsToSpawn;
 
 
 private:
-
-	void ScheduleActorSpawn();
-
-	UFUNCTION() void SpawnActorScheduled();
-	
 	UPROPERTY(EditDefaultsOnly) UBoxComponent* SpawnBox;
-	
-	UPROPERTY(EditAnywhere)	TSubclassOf<AActor> ActorClassToSpawn; //Zmieniæ na Tablicê obiektów do spawnowania.
-
-	UPROPERTY(EditAnywhere) bool ShouldSpawn = true;
-
-	FTimerHandle SpawnTimerHandle;
 };

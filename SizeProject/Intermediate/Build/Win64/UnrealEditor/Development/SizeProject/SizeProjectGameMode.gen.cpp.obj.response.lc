@@ -1,4 +1,4 @@
-D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject\SizeProjectGameMode.gen.cpp
+C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject\SizeProjectGameMode.gen.cpp
 /I .
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine
 /I Runtime
@@ -251,8 +251,8 @@ D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProjec
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
-/I D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject
-/I D:\Nauka\Unreal\SizeProject\Source
+/I C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProject
+/I C:\Wszystko\Projekty\SizeProject\SizeProject\Source
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\MRMesh
@@ -277,12 +277,12 @@ D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Inc\SizeProjec
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\Definitions.SizeProject.h"
-/Yu"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectGameMode.gen.cpp.lc.obj"
-/sourceDependencies"D:\Nauka\Unreal\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectGameMode.gen.cpp.lc.json"
+/FI"C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/FI"C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\Definitions.SizeProject.h"
+/Yu"C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\SizeProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+/Fo"C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectGameMode.gen.cpp.lc.obj"
+/sourceDependencies"C:\Wszystko\Projekty\SizeProject\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\SizeProjectGameMode.gen.cpp.lc.json"
 /Zc:inline
 /nologo
 /Oi

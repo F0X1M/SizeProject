@@ -17,67 +17,24 @@ ASpawnBox::ASpawnBox()
 void ASpawnBox::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	if (ShouldSpawn) 
-	{
-		ScheduleActorSpawn();
-	}
 }
 
-void ASpawnBox::EndPlay(const EEndPlayReason::Type EndPlayReason)
-{
-	Super::EndPlay(EndPlayReason);
-	GetWorld()->GetTimerManager().ClearAllTimersForObject(this);
-}
 
-bool ASpawnBox::SpawnActor()
+void ASpawnBox::SpawnActor()
 {
-	bool SpawnedActor = false;
-	
-	if (ActorClassToSpawn)
+	auto it = ObjectsToSpawn.CreateConstIterator();
+	for (const TPair<TSubclassOf<AActor>, int32>& obj : ObjectsToSpawn)
 	{
-		FBoxSphereBounds BoxBounds = SpawnBox->CalcBounds(GetActorTransform());
-
-		FVector SpawnLocation = BoxBounds.Origin;
-		SpawnLocation.X += -BoxBounds.BoxExtent.X + 2 * BoxBounds.BoxExtent.X * FMath::FRand();
-		SpawnLocation.Y += -BoxBounds.BoxExtent.Y + 2 * BoxBounds.BoxExtent.Y * FMath::FRand();
-		SpawnLocation.Z += -BoxBounds.BoxExtent.Z + 2 * BoxBounds.BoxExtent.Z * FMath::FRand();
-
-		SpawnedActor = GetWorld()->SpawnActor(ActorClassToSpawn, &SpawnLocation) != nullptr;
-
-	}
-
-	return SpawnedActor;
-}
-
-void ASpawnBox::ScheduleActorSpawn()
-{
-	float DeltaToNextSpawn = AvgSpawnTime + (-RandomSpawnTime + 2 * RandomSpawnTime * FMath::FRand());
-
-	GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &ASpawnBox::SpawnActorScheduled, DeltaToNextSpawn, false);
-}
-
-void ASpawnBox::EnableActorSpawning(bool Enable)
-{
-	ShouldSpawn = Enable;
-
-	if (Enable)
-	{
-		ScheduleActorSpawn();
-	}
-	else
-	{
-		GetWorld()->GetTimerManager().ClearTimer(SpawnTimerHandle);
-	}
-}
-
-void ASpawnBox::SpawnActorScheduled()
-{
-	if (SpawnActor())
-	{
-		if (ShouldSpawn)
+		for (int i = 0; i < obj.Value; i++)
 		{
-			ScheduleActorSpawn();
+			FBoxSphereBounds BoxBounds = SpawnBox->CalcBounds(GetActorTransform());
+
+			FVector SpawnLocation = BoxBounds.Origin;
+			SpawnLocation.X += -BoxBounds.BoxExtent.X + 2 * BoxBounds.BoxExtent.X * FMath::FRand();
+			SpawnLocation.Y += -BoxBounds.BoxExtent.Y + 2 * BoxBounds.BoxExtent.Y * FMath::FRand();
+			SpawnLocation.Z += -BoxBounds.BoxExtent.Z + 2 * BoxBounds.BoxExtent.Z * FMath::FRand();
+
+			GetWorld()->SpawnActor(obj.Key, &SpawnLocation);
 		}
 	}
 }

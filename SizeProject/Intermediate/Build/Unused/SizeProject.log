@@ -1,18 +1,5 @@
 ﻿  Using bundled DotNet SDK
-  Log file: C:\Users\foxim\AppData\Local\UnrealBuildTool\Log.txt
-  Using 'git status' to determine working set for adaptive non-unity build (D:\Nauka\Unreal\Git\Project).
-  Building SizeProjectEditor...
-  Using Visual Studio 2022 14.32.31332 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.32.31326) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  [Adaptive Build] Excluded from SizeProject unity file: SizeProjectCharacter.cpp, SpawnBox.cpp
-  Determining max actions to execute in parallel (4 physical cores, 4 logical cores)
-    Executing up to 4 processes, one per physical core
-  Building 5 actions with 4 processes...
-  [1/5] Compile SpawnBox.gen.cpp
-  [2/5] Compile SpawnBox.cpp
-  [3/5] Link UnrealEditor-SizeProject.lib
-     Trwa tworzenie biblioteki D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\UnrealEditor-SizeProject.lib i obiektu D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\UnrealEditor-SizeProject.exp
-  [4/5] Link UnrealEditor-SizeProject.dll
-     Trwa tworzenie biblioteki D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\UnrealEditor-SizeProject.suppressed.lib i obiektu D:\Nauka\Unreal\Git\Project\SizeProject\Intermediate\Build\Win64\UnrealEditor\Development\SizeProject\UnrealEditor-SizeProject.suppressed.exp
-  [5/5] WriteMetadata SizeProjectEditor.target
-  Total time in Parallel executor: 2,49 seconds
-  Total execution time: 3,37 seconds
+  Log file: C:\Users\foxh\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Wszystko\Projekty\SizeProject).
+  Target is up to date
+  Total execution time: 0,84 seconds

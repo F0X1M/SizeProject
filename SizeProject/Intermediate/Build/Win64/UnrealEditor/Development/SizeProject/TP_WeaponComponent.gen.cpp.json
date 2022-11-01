@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "d:\\nauka\\unreal\\git\\project\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\sizeproject\\tp_weaponcomponent.gen.cpp",
+        "Source": "c:\\wszystko\\projekty\\sizeproject\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\sizeproject\\tp_weaponcomponent.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "d:\\nauka\\unreal\\git\\project\\sizeproject\\intermediate\\build\\win64\\sizeprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "PCH": "c:\\wszystko\\projekty\\sizeproject\\sizeproject\\intermediate\\build\\win64\\sizeprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
         "Includes": [
-            "d:\\nauka\\unreal\\git\\project\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\development\\sizeproject\\definitions.sizeproject.h",
-            "d:\\nauka\\unreal\\git\\project\\sizeproject\\source\\sizeproject\\tp_weaponcomponent.h",
-            "d:\\nauka\\unreal\\git\\project\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\sizeproject\\tp_weaponcomponent.generated.h"
+            "c:\\wszystko\\projekty\\sizeproject\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\development\\sizeproject\\definitions.sizeproject.h",
+            "c:\\wszystko\\projekty\\sizeproject\\sizeproject\\source\\sizeproject\\tp_weaponcomponent.h",
+            "c:\\wszystko\\projekty\\sizeproject\\sizeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\sizeproject\\tp_weaponcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

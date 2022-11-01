@@ -16,15 +16,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_SizeProject_Source_SizeProject_SpawnBox_h_13_SPARSE_DATA
 #define FID_SizeProject_Source_SizeProject_SpawnBox_h_13_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execSpawnActorScheduled); \
-	DECLARE_FUNCTION(execEnableActorSpawning); \
 	DECLARE_FUNCTION(execSpawnActor);
 
 
 #define FID_SizeProject_Source_SizeProject_SpawnBox_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execSpawnActorScheduled); \
-	DECLARE_FUNCTION(execEnableActorSpawning); \
 	DECLARE_FUNCTION(execSpawnActor);
 
 
