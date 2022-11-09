@@ -72,6 +72,3 @@ SizeProject/Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 SizeProject/DerivedDataCache/*
-
-# Ignore ToQly's private testing environment
-SizeProject/Content/MojePrivat/*

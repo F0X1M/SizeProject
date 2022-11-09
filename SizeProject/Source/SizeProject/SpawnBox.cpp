@@ -27,14 +27,21 @@ void ASpawnBox::SpawnActor()
 	{
 		for (int i = 0; i < obj.Value; i++)
 		{
-			FBoxSphereBounds BoxBounds = SpawnBox->CalcBounds(GetActorTransform());
+			int ObjSize = FMath::RandRange(1, 3);
 
+			FTransform Transform;
+			Transform.SetScale3D(FVector(ObjSize, ObjSize, ObjSize));
+
+			FBoxSphereBounds BoxBounds = SpawnBox->CalcBounds(GetActorTransform());
+	
 			FVector SpawnLocation = BoxBounds.Origin;
 			SpawnLocation.X += -BoxBounds.BoxExtent.X + 2 * BoxBounds.BoxExtent.X * FMath::FRand();
 			SpawnLocation.Y += -BoxBounds.BoxExtent.Y + 2 * BoxBounds.BoxExtent.Y * FMath::FRand();
 			SpawnLocation.Z += -BoxBounds.BoxExtent.Z + 2 * BoxBounds.BoxExtent.Z * FMath::FRand();
 
-			GetWorld()->SpawnActor(obj.Key, &SpawnLocation);
+			Transform.SetLocation(SpawnLocation);
+
+			GetWorld()->SpawnActor(obj.Key, &Transform);
 		}
 	}
 }
