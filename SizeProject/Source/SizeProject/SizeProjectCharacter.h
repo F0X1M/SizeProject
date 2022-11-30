@@ -55,7 +55,6 @@ protected:
 	UFUNCTION(BlueprintCallable) void OnAction();
 
 	void Pickup();
-	void Drop();
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);

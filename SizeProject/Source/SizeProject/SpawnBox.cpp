@@ -22,26 +22,35 @@ void ASpawnBox::BeginPlay()
 
 void ASpawnBox::SpawnActor()
 {
-	auto it = ObjectsToSpawn.CreateConstIterator();
-	for (const TPair<TSubclassOf<AActor>, int32>& obj : ObjectsToSpawn)
+	if (CanBeSpawned)
 	{
-		for (int i = 0; i < obj.Value; i++)
+		auto it = ObjectsToSpawn.CreateConstIterator();
+		for (const TPair<TSubclassOf<AActor>, int32>& obj : ObjectsToSpawn)
 		{
-			int ObjSize = FMath::RandRange(1, 3);
+			for (int i = 0; i < obj.Value; i++)
+			{
+				int ObjSize = FMath::RandRange(1, 3);
 
-			FTransform Transform;
-			Transform.SetScale3D(FVector(ObjSize, ObjSize, ObjSize));
+				FTransform Transform;
+				Transform.SetScale3D(FVector(ObjSize, ObjSize, ObjSize));
 
-			FBoxSphereBounds BoxBounds = SpawnBox->CalcBounds(GetActorTransform());
-	
-			FVector SpawnLocation = BoxBounds.Origin;
-			SpawnLocation.X += -BoxBounds.BoxExtent.X + 2 * BoxBounds.BoxExtent.X * FMath::FRand();
-			SpawnLocation.Y += -BoxBounds.BoxExtent.Y + 2 * BoxBounds.BoxExtent.Y * FMath::FRand();
-			SpawnLocation.Z += -BoxBounds.BoxExtent.Z + 2 * BoxBounds.BoxExtent.Z * FMath::FRand();
+				FBoxSphereBounds BoxBounds = SpawnBox->CalcBounds(GetActorTransform());
 
-			Transform.SetLocation(SpawnLocation);
+				FVector SpawnLocation = BoxBounds.Origin;
+				SpawnLocation.X += -BoxBounds.BoxExtent.X + 2 * BoxBounds.BoxExtent.X * FMath::FRand();
+				SpawnLocation.Y += -BoxBounds.BoxExtent.Y + 2 * BoxBounds.BoxExtent.Y * FMath::FRand();
+				SpawnLocation.Z += -BoxBounds.BoxExtent.Z + 2 * BoxBounds.BoxExtent.Z * FMath::FRand();
 
-			GetWorld()->SpawnActor(obj.Key, &Transform);
+				Transform.SetLocation(SpawnLocation);
+
+				GetWorld()->SpawnActor(obj.Key, &Transform);
+			}
 		}
+		CanBeSpawned = false;
 	}
+}
+
+void ASpawnBox::DestroyActors()
+{
+	
 }
