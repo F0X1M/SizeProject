@@ -26,9 +26,15 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Object To Spawn") TMap<TSubclassOf<AActor>, int32> ObjectsToSpawn;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanBeSpawned = true;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawned Actor location") TMap<TSubclassOf<AActor>, FVector> SpawnedActors;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanBeSpawned = true;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanDestroy = true;
+	
 private:
 	UPROPERTY(EditDefaultsOnly) UBoxComponent* SpawnBox;
+
+	FHitResult HitResult;
 
 };

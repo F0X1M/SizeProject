@@ -52,5 +52,11 @@ void ASpawnBox::SpawnActor()
 
 void ASpawnBox::DestroyActors()
 {
-	
+	FCollisionShape Sphere = FCollisionShape::MakeSphere(40);
+
+	if (GetWorld()->SweepSingleByChannel(HitResult, GetActorLocation(), GetActorLocation() + FVector::UpVector * 100, FQuat::Identity, ECC_GameTraceChannel2, Sphere) && CanDestroy)
+	{
+		HitResult.GetActor()->Destroy();
+		CanBeSpawned = true;
+	}
 }

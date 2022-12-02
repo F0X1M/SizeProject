@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "SpawnBox.h"
 #include "SizeProjectCharacter.generated.h"
 
 class UInputComponent;
@@ -109,6 +110,8 @@ public:
 	bool bHoldingItem = false;
 
 	FVector TargetLocation(FHitResult *Hit);
+
+	void OpenDoor(FHitResult Hit);
 
 	FHitResult HitResult;
 

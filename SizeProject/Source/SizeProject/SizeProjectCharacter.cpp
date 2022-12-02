@@ -181,6 +181,10 @@ void ASizeProjectCharacter::OnAction()
 
 			CurrentItem->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
 		}
+		else if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility) && HitResult.GetActor()->ActorHasTag("Door"))
+		{
+			OpenDoor(HitResult);
+		}
 	}
 	else
 	{
@@ -208,6 +212,10 @@ FVector ASizeProjectCharacter::TargetLocation(FHitResult* Hit)
 	return ThisHit.ImpactPoint - (FirstPersonCameraComponent->GetForwardVector() * Offset * TargetScale.X);
 }
 
+void ASizeProjectCharacter::OpenDoor(FHitResult Hit)
+{
+	
+}
 
 UPhysicsHandleComponent* ASizeProjectCharacter::GetPhysicsHandle() const
 {
