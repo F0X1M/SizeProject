@@ -20,7 +20,7 @@ void ASpawnBox::BeginPlay()
 }
 
 
-void ASpawnBox::SpawnActor()
+void ASpawnBox::CreateActor()
 {
 	if (CanBeSpawned)
 	{
@@ -54,9 +54,14 @@ void ASpawnBox::DestroyActors()
 {
 	FCollisionShape Sphere = FCollisionShape::MakeSphere(40);
 
-	if (GetWorld()->SweepSingleByChannel(HitResult, GetActorLocation(), GetActorLocation() + FVector::UpVector * 100, FQuat::Identity, ECC_GameTraceChannel2, Sphere) && CanDestroy)
+	if (GetWorld()->SweepSingleByChannel(HitResult, GetActorLocation(), GetActorLocation() + FVector::UpVector, FQuat::Identity, ECC_GameTraceChannel2, Sphere) && CanDestroy)
 	{
 		HitResult.GetActor()->Destroy();
+		if (GetWorld()->SweepSingleByChannel(HitResult, GetActorLocation(), GetActorLocation() + FVector::UpVector, FQuat::Identity, ECC_GameTraceChannel2, Sphere))
+		{
+			HitResult.GetActor()->Destroy();
+		}
 		CanBeSpawned = true;
 	}
 }
+

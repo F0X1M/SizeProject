@@ -213,7 +213,7 @@ FVector ASizeProjectCharacter::TargetLocation(FHitResult* Hit)
 }
 
 void ASizeProjectCharacter::OpenDoor(FHitResult Hit)
-{
+{	
 	
 }
 
@@ -226,3 +226,7 @@ UPhysicsHandleComponent* ASizeProjectCharacter::GetPhysicsHandle() const
 
 	return Result;
 }
+
+// zabroniæ niszczenia obiektu,
+// otwieranie drzwi,
+// podnoszenie obiektu bez skalowania 

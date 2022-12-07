@@ -6,6 +6,7 @@
 #include "Engine/TriggerBox.h"
 #include "GameFramework/Actor.h"
 #include "SizeProjectCharacter.h"
+#include "Kismet/GameplayStatics.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "TeleportBox.generated.h"
 
@@ -28,9 +29,17 @@ public:
 	UFUNCTION()
 		void ExitTeleport(AActor* OvelapedActor, AActor* OtherActor);
 
+	UFUNCTION(BlueprintCallable) void FindOtherTele();
+
 	UPROPERTY(EditAnywhere, Category = "Teleport")
 		ATeleportBox* OtherTele;
 
 	UPROPERTY()
 		bool Teleporting;
+
+
+	UPROPERTY(EditAnywhere, Category = "Teleport")
+		TSubclassOf<AActor> TeleportClass;
+
+	TArray<AActor*> FoundActors;
 };

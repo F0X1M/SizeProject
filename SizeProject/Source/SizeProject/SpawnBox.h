@@ -21,12 +21,10 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	UFUNCTION(BlueprintCallable) void SpawnActor();
+	UFUNCTION(BlueprintCallable) void CreateActor();
 	UFUNCTION(BlueprintCallable) void DestroyActors();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Object To Spawn") TMap<TSubclassOf<AActor>, int32> ObjectsToSpawn;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Spawned Actor location") TMap<TSubclassOf<AActor>, FVector> SpawnedActors;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanBeSpawned = true;
 	
