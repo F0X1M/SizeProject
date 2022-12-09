@@ -68,7 +68,7 @@ void ASizeProjectCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	// Bind fire event
-	PlayerInputComponent->BindAction("PrimaryAction", IE_Pressed, this, &ASizeProjectCharacter::OnPrimaryAction);
+	PlayerInputComponent->BindAction("PickUp", IE_Pressed, this, &ASizeProjectCharacter::PickUp);
 	PlayerInputComponent->BindAction("OnAction", IE_Pressed, this, &ASizeProjectCharacter::OnAction);
 
 
@@ -164,6 +164,40 @@ bool ASizeProjectCharacter::EnableTouchscreenMovement(class UInputComponent* Pla
 
 void ASizeProjectCharacter::OnAction()
 {
+	if (!Picked)
+	{
+		UPhysicsHandleComponent* PhysicsHandle = GetPhysicsHandle();
+
+		if (PhysicsHandle && !bHoldingItem)
+		{
+			FVector Start = FirstPersonCameraComponent->GetComponentLocation();
+			FVector End = Start + FirstPersonCameraComponent->GetForwardVector() * 4000;
+
+			if (GetWorld()->LineTraceSingleByObjectType(HitResult, Start, End, ECC_PhysicsBody))
+			{
+				bHoldingItem = !bHoldingItem;
+
+				PhysicsHandle->GrabComponentAtLocation(HitResult.GetComponent(), NAME_None, HitResult.ImpactPoint);
+				CurrentItem = PhysicsHandle->GetGrabbedComponent();
+				OriginalDistance = FVector::Dist(FirstPersonCameraComponent->GetComponentLocation(), CurrentItem->GetComponentLocation());
+
+				CurrentItem->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
+			}
+		}
+		else
+		{
+			bHoldingItem = !bHoldingItem;
+			CurrentItem->SetCollisionResponseToChannel(ECC_Pawn, ECR_Block);
+			CurrentItem->SetAllPhysicsLinearVelocity(FVector(0, 0, 0));
+			PhysicsHandle->ReleaseComponent();
+		}
+	}
+	else
+		PickUp();
+}
+
+void ASizeProjectCharacter::PickUp()
+{
 	UPhysicsHandleComponent* PhysicsHandle = GetPhysicsHandle();
 
 	if (PhysicsHandle && !bHoldingItem)
@@ -174,6 +208,7 @@ void ASizeProjectCharacter::OnAction()
 		if (GetWorld()->LineTraceSingleByObjectType(HitResult, Start, End, ECC_PhysicsBody))
 		{
 			bHoldingItem = !bHoldingItem;
+			Picked = true;
 
 			PhysicsHandle->GrabComponentAtLocation(HitResult.GetComponent(), NAME_None, HitResult.ImpactPoint);
 			CurrentItem = PhysicsHandle->GetGrabbedComponent();
@@ -183,38 +218,41 @@ void ASizeProjectCharacter::OnAction()
 		}
 		else if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility) && HitResult.GetActor()->ActorHasTag("Door"))
 		{
-			OpenDoor(HitResult);
+			
 		}
 	}
 	else
 	{
 		bHoldingItem = !bHoldingItem;
 		CurrentItem->SetCollisionResponseToChannel(ECC_Pawn, ECR_Block);
-		CurrentItem->SetAllPhysicsLinearVelocity(FVector(0,0,0));
+		CurrentItem->SetAllPhysicsLinearVelocity(FVector(0, 0, 0));
 		PhysicsHandle->ReleaseComponent();
+		Picked = false;
 	}
 }
 
 FVector ASizeProjectCharacter::TargetLocation(FHitResult* Hit)
 {
-	FVector FinishLine = FirstPersonCameraComponent->GetComponentLocation() + FirstPersonCameraComponent->GetForwardVector() * 10000;
+	if (!Picked)
+	{
+		FVector FinishLine = FirstPersonCameraComponent->GetComponentLocation() + FirstPersonCameraComponent->GetForwardVector() * 10000;
 	
-	FHitResult ThisHit;
-
-	GetWorld()->LineTraceSingleByObjectType(ThisHit, FirstPersonCameraComponent->GetComponentLocation(), FinishLine, ECC_WorldStatic);
-
-	float CurrentDistance = FVector::Dist(FirstPersonCameraComponent->GetComponentLocation(), CurrentItem->GetComponentLocation());
-	float S = CurrentDistance / OriginalDistance;
-
-	TargetScale = FVector(S,S,S);
-	CurrentItem->SetWorldScale3D(TargetScale);
-
-	return ThisHit.ImpactPoint - (FirstPersonCameraComponent->GetForwardVector() * Offset * TargetScale.X);
-}
-
-void ASizeProjectCharacter::OpenDoor(FHitResult Hit)
-{	
+		FHitResult ThisHit;
 	
+		GetWorld()->LineTraceSingleByObjectType(ThisHit, FirstPersonCameraComponent->GetComponentLocation(), FinishLine, ECC_WorldStatic);
+
+		float CurrentDistance = FVector::Dist(FirstPersonCameraComponent->GetComponentLocation(), CurrentItem->GetComponentLocation());
+		float S = CurrentDistance / OriginalDistance;
+
+		TargetScale = FVector(S, S, S);
+		CurrentItem->SetWorldScale3D(TargetScale);
+
+		return ThisHit.ImpactPoint - (FirstPersonCameraComponent->GetForwardVector() * Offset * TargetScale.X);
+	}
+	else
+	{
+		return FirstPersonCameraComponent->GetComponentLocation() + FirstPersonCameraComponent->GetForwardVector() * OriginalDistance;
+	}
 }
 
 UPhysicsHandleComponent* ASizeProjectCharacter::GetPhysicsHandle() const
@@ -229,4 +267,4 @@ UPhysicsHandleComponent* ASizeProjectCharacter::GetPhysicsHandle() const
 
 // zabroniæ niszczenia obiektu,
 // otwieranie drzwi,
-// podnoszenie obiektu bez skalowania 
+// podnoszenie obiektu bez skalowania #Zrobione

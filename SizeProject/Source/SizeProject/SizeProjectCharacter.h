@@ -55,7 +55,7 @@ protected:
 
 	UFUNCTION(BlueprintCallable) void OnAction();
 
-	void Pickup();
+	void PickUp();
 
 	/** Handles moving forward/backward */
 	void MoveForward(float Val);
@@ -111,8 +111,6 @@ public:
 
 	FVector TargetLocation(FHitResult *Hit);
 
-	void OpenDoor(FHitResult Hit);
-
 	FHitResult HitResult;
 
 	UPrimitiveComponent* CurrentItem;
@@ -121,6 +119,8 @@ private:
 	UPhysicsHandleComponent* GetPhysicsHandle() const;
 
 	UPROPERTY(EditAnywhere) float Offset = 1;
+
+	bool Picked = false;
 	
 	float OriginalDistance;             
 	float OriginalScale;                
