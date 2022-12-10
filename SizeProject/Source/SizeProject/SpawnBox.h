@@ -23,12 +23,17 @@ protected:
 public:
 	UFUNCTION(BlueprintCallable) void CreateActor();
 	UFUNCTION(BlueprintCallable) void DestroyActors();
+	UFUNCTION(BlueprintCallable) void MoveActor(FVector NewLocation);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Object To Spawn") TMap<TSubclassOf<AActor>, int32> ObjectsToSpawn;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanBeSpawned = true;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool CanDestroy = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bRandomScale = true;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Object To Spawn") AActor* TeleportToMove;
 	
 private:
 	UPROPERTY(EditDefaultsOnly) UBoxComponent* SpawnBox;

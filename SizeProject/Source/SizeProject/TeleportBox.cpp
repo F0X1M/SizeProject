@@ -5,6 +5,7 @@ ATeleportBox::ATeleportBox()
 	OnActorBeginOverlap.AddDynamic(this, &ATeleportBox::EnterTeleport);
 	OnActorEndOverlap.AddDynamic(this, &ATeleportBox::ExitTeleport);
 	Teleporting = false;
+	FindOtherTele();
 }
 
 void ATeleportBox::BeginPlay()
@@ -46,10 +47,7 @@ void ATeleportBox::FindOtherTele()
 {
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), TeleportClass, FoundActors);
 	
-	for (auto actor : FoundActors)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Actor: %s"), *actor->GetActorNameOrLabel());
-	}
+	
 }
 
 // sprawdzanie czy jest wiêcej od 0 je¿eli tak to ma przypisaæ OtherTele,

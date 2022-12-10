@@ -39,7 +39,7 @@ public:
 
 
 	UPROPERTY(EditAnywhere, Category = "Teleport")
-		TSubclassOf<AActor> TeleportClass;
+		TSubclassOf<ATeleportBox> TeleportClass;
 
 	TArray<AActor*> FoundActors;
 };

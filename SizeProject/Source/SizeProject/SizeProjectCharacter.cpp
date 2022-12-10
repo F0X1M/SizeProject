@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
+#include "DrawDebugHelpers.h"
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -35,6 +36,7 @@ ASizeProjectCharacter::ASizeProjectCharacter()
 	Mesh1P->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 
+	CurrentDoor = NULL;
 }
 
 void ASizeProjectCharacter::BeginPlay()
@@ -49,11 +51,12 @@ void ASizeProjectCharacter::Tick(float DeltaTime)
 
 	UPhysicsHandleComponent* PhysicsHandle = GetPhysicsHandle();
 
+	
+
 	if (PhysicsHandle && PhysicsHandle->GetGrabbedComponent())
 	{
 		PhysicsHandle->SetTargetLocationAndRotation(TargetLocation(&HitResult),FirstPersonCameraComponent->GetComponentRotation());
 	}
-
 }
 
 //////////////////////////////////////////////////////////////////////////// Input
@@ -204,7 +207,7 @@ void ASizeProjectCharacter::PickUp()
 	{
 		FVector Start = FirstPersonCameraComponent->GetComponentLocation();
 		FVector End = Start + FirstPersonCameraComponent->GetForwardVector() * 4000;
-
+		
 		if (GetWorld()->LineTraceSingleByObjectType(HitResult, Start, End, ECC_PhysicsBody))
 		{
 			bHoldingItem = !bHoldingItem;
@@ -215,10 +218,17 @@ void ASizeProjectCharacter::PickUp()
 			OriginalDistance = FVector::Dist(FirstPersonCameraComponent->GetComponentLocation(), CurrentItem->GetComponentLocation());
 
 			CurrentItem->SetCollisionResponseToChannel(ECC_Pawn, ECR_Ignore);
-		}
+		}	
 		else if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility) && HitResult.GetActor()->ActorHasTag("Door"))
 		{
-			
+			DrawDebugLine(GetWorld(), Start, End, FColor::Red, 1, 10, 1);
+			if (HitResult.GetActor()->GetClass()->IsChildOf(ADoor::StaticClass()))
+			{
+
+				CurrentDoor = Cast<ADoor>(HitResult.GetActor());
+				CurrentDoor->ToggleDoor();
+				
+			}
 		}
 	}
 	else
@@ -228,6 +238,7 @@ void ASizeProjectCharacter::PickUp()
 		CurrentItem->SetAllPhysicsLinearVelocity(FVector(0, 0, 0));
 		PhysicsHandle->ReleaseComponent();
 		Picked = false;
+		CurrentDoor = NULL;
 	}
 }
 
@@ -267,4 +278,4 @@ UPhysicsHandleComponent* ASizeProjectCharacter::GetPhysicsHandle() const
 
 // zabroniæ niszczenia obiektu,
 // otwieranie drzwi,
-// podnoszenie obiektu bez skalowania #Zrobione
+// podnoszenie obiektu bez skalowania ###Zrobione

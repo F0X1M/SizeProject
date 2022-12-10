@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "PhysicsEngine/PhysicsHandleComponent.h"
-#include "SpawnBox.h"
+#include "Door.h"
 #include "SizeProjectCharacter.generated.h"
 
 class UInputComponent;
@@ -48,6 +48,9 @@ public:
 	/** Delegate to whom anyone can subscribe to receive this event */
 	UPROPERTY(BlueprintAssignable, Category = "Interaction")
 	FOnUseItem OnUseItem;
+
+	UPROPERTY()
+		class ADoor* CurrentDoor;
 protected:
 	
 	/** Fires a projectile. */

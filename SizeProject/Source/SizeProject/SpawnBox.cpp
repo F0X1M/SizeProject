@@ -30,9 +30,13 @@ void ASpawnBox::CreateActor()
 			for (int i = 0; i < obj.Value; i++)
 			{
 				int ObjSize = FMath::RandRange(1, 3);
-
+				
 				FTransform Transform;
-				Transform.SetScale3D(FVector(ObjSize, ObjSize, ObjSize));
+				
+				if(bRandomScale)
+				{
+					Transform.SetScale3D(FVector(ObjSize, ObjSize, ObjSize));
+				}
 
 				FBoxSphereBounds BoxBounds = SpawnBox->CalcBounds(GetActorTransform());
 
@@ -52,16 +56,22 @@ void ASpawnBox::CreateActor()
 
 void ASpawnBox::DestroyActors()
 {
-	FCollisionShape Sphere = FCollisionShape::MakeSphere(40);
+	FCollisionShape Sphere = FCollisionShape::MakeSphere(400);
 
-	if (GetWorld()->SweepSingleByChannel(HitResult, GetActorLocation(), GetActorLocation() + FVector::UpVector, FQuat::Identity, ECC_GameTraceChannel2, Sphere) && CanDestroy)
+	for (auto Actors : ObjectsToSpawn)
 	{
-		HitResult.GetActor()->Destroy();
 		if (GetWorld()->SweepSingleByChannel(HitResult, GetActorLocation(), GetActorLocation() + FVector::UpVector, FQuat::Identity, ECC_GameTraceChannel2, Sphere))
 		{
 			HitResult.GetActor()->Destroy();
+			CanBeSpawned = true;
 		}
-		CanBeSpawned = true;
 	}
 }
 
+void ASpawnBox::MoveActor(FVector NewLocation)
+{
+	if (TeleportToMove)
+	{
+		TeleportToMove->SetActorLocation(NewLocation);
+	}
+}
