@@ -33,7 +33,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite) bool bRandomScale = true;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Object To Spawn") AActor* TeleportToMove;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Object To Spawn") TArray<AActor*> ActorsToMove;
 	
 private:
 	UPROPERTY(EditDefaultsOnly) UBoxComponent* SpawnBox;

@@ -70,8 +70,8 @@ void ASpawnBox::DestroyActors()
 
 void ASpawnBox::MoveActor(FVector NewLocation)
 {
-	if (TeleportToMove)
+	for (auto actors : ActorsToMove)
 	{
-		TeleportToMove->SetActorLocation(NewLocation);
+		actors->SetActorLocation(NewLocation);
 	}
 }
